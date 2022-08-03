@@ -13,7 +13,13 @@ app.use(cors());
 app.use(express.json());
 
 
+const router = express.Router()
+router.get('/', cors(), (req, res) => {
+  res.json({ message:
+  'Welcome! You can access data via the following routes: /movies, /reviews, /theaters, /reviews/:reviewId, /movies/:movieId, /movies/:movieId/theaters, /movies/:movieId/reviews.'});
+})
 
+app.use('/', router);
 
 
 
